@@ -1,0 +1,33 @@
+<div class="overflow-auto" style="border: 1px solid rgba(0,0,0,.125); height: 90vh; position: relative;">
+    <h3 class="text-center">{{friend.name}}</h3>
+  <hr>
+  <div class="list-group">
+      <a 
+      *ngFor="let msg of friend.msg"
+      href="#" 
+      class="list-group-item list-group-item-action">
+        <div class="media">
+            <img [src]="friend.img" class="align-self-center mr-3" alt="{{ friend.name }}" style="max-height: 30px; max-width: 30px; border-radius: 49.9%;">
+            <div class="media-body">
+              <h5 class="mt-2">{{ msg }}</h5>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="input-group position-fixed fixed-bottom w-25" style="bottom: 0">
+        <input
+        [(ngModel)]="msgInput"
+        #MsgInput
+        type="text" 
+        class="form-control" 
+        placeholder="Write a message...">
+      <div class="input-group-append">
+        <button  
+        class="btn btn-primary" 
+        type="button" 
+        (click)="onAddMsg()"
+        [disabled]="!msgInput">Send</button>
+      </div>
+    </div>
+</div>

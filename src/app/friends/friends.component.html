@@ -1,0 +1,13 @@
+<div class="row clearfix">
+  <div class="col-md-3">
+    <app-friends-list></app-friends-list>
+  </div>
+
+  <div class="col-md-9">
+    <app-friend-details *ngIf="selectedFriend; else infoText"
+    [friend]="selectedFriend"></app-friend-details>
+    <ng-template #infoText>
+      <p>Select Friend</p>
+    </ng-template>
+  </div>
+</div>
