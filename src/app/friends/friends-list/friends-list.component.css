@@ -1,0 +1,16 @@
+.friends-list-page {
+  width: 30rem;
+  height: 95vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: var(--color-white);
+  font-size: 1.6rem;
+}
+
+.friends-list {
+  padding: 0 1.5rem;
+  height: 65vh;
+  overflow: auto;
+  border-bottom: 1px solid var(--color-light-grey-2);
+}

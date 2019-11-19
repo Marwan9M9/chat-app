@@ -1,13 +1,9 @@
 <div class="row">
-  <div class="col-xs-12">
-      <div class="list-group">
-          <div class="input-group">
-              <input [(ngModel)]='name' type="text" class="form-control" placeholder="Search...">
-          </div>
-
-        <app-friend 
-        [friend]="friend"
-        *ngFor="let friend of friends | filterFriend: name"></app-friend>
-      </div>
+  <div class="friends-list-page">
+    <div class="list-group">
+      <app-friend 
+      [friend]="friend"
+      *ngFor="let friend of friends;"></app-friend>
+    </div>
   </div>
 </div>

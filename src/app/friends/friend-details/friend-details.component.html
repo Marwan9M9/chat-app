@@ -1,33 +1,49 @@
-<div class="overflow-auto" style="border: 1px solid rgba(0,0,0,.125); height: 90vh; position: relative;">
-    <h3 class="text-center">{{friend.name}}</h3>
-  <hr>
-  <div class="list-group">
-      <a 
-      *ngFor="let msg of friend.msg"
-      href="#" 
-      class="list-group-item list-group-item-action">
-        <div class="media">
-            <img [src]="friend.img" class="align-self-center mr-3" alt="{{ friend.name }}" style="max-height: 30px; max-width: 30px; border-radius: 49.9%;">
-            <div class="media-body">
-              <h5 class="mt-2">{{ msg }}</h5>
-            </div>
-        </div>
+<div class="chat-page">
+  <div class="chat-header">
+    <a href="#" class="header-person-link">
+      <img [src]="friend.img" alt="{{friend.name}}" class="header-person-img">
+      <span class="header-container align-middle">                      
+        <span class="header-person-name">{{friend.name}}</span>
+        <span class="header-last-seen">Last seen at 3 AM</span>
+      </span>
+    </a>
+    <span class="icons-container float-right">
+      <a href="#" class="settings-icon dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-cog icon"></i>
       </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#"><i class="fas fa-volume-mute d-inline-block mr-2"></i>Mute</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-ban d-inline-block mr-2"></i>Block</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-trash d-inline-block mr-2"></i>Delete</a>
+      </div>
+      <i class="fas fa-times icon close-icon"></i>
+    </span>
+  </div>
+  <div class="chat-body">
+    <div 
+    *ngFor="let msg of friend.msg"
+    class="message my-message float-left">
+      {{ msg }}
     </div>
+  </div>
 
-    <div class="input-group position-fixed fixed-bottom w-25" style="bottom: 0">
-        <input
+  <div class="chat-message-write">
+    <div class="chat-write-section">
+      <input
         [(ngModel)]="msgInput"
         #MsgInput
         type="text" 
-        class="form-control" 
-        placeholder="Write a message...">
-      <div class="input-group-append">
-        <button  
+        class="chat-message-input" 
+        placeholder="Write a message..."
+      >
+      <button  
         class="btn btn-primary" 
         type="button" 
         (click)="onAddMsg()"
-        [disabled]="!msgInput">Send</button>
-      </div>
+        [disabled]="!msgInput"
+        class="send-btn">
+          <i class="fas fa-paper-plane icon send-icon"></i>
+      </button>
     </div>
+  </div>
 </div>

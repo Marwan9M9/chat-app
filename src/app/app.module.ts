@@ -10,7 +10,6 @@ import { FriendsComponent } from './friends/friends.component';
 import { FriendComponent } from './friends/friends-list/friend/friend.component';
 import { FriendDetailsComponent } from './friends/friend-details/friend-details.component';
 import { DisabledDirective } from './disabled.directive';
-import { FilterFriendPipe } from './filter-friend.pipe';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { FilterFriendPipe } from './filter-friend.pipe';
     FriendsComponent,
     FriendComponent,
     FriendDetailsComponent,
-    DisabledDirective,
-    FilterFriendPipe
+    DisabledDirective
   ],
   imports: [
     BrowserModule,
