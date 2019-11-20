@@ -106,6 +106,8 @@
   font-weight: 400;
   min-width: 60%;
   max-width: 90%;
+  height: auto;
+  overflow: auto;
 }
 
 .others-message {
